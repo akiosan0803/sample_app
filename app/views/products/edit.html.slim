@@ -1,0 +1,6 @@
+h1 編集ページ
+
+.nav.justify-content-end
+  = link_to '一覧',product_path,class:'nav-link'
+
+= render partial: 'form',locals:{product: @product}

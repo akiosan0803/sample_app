@@ -1,0 +1,30 @@
+h1 詳細ページ
+
+.nav.justify-content-end
+ = link_to '一覧', products_path, class: 'nav-link'
+.image-box.mb-3
+  = image_tag @product.image.variant(resize: "150x150"),id: :image_prev if @product.image.attached?
+table.table.table-hover
+  tbody
+    tr
+      th= Product.human_attribute_name(:nickname)
+      td= @product.name
+    tr
+      th= Product.human_attribute_name(:created_at)
+      td= @product.created_at.strftime('%y-%m-%d %h:%m')
+    tr
+      th= Product.human_attribute_name(:description)
+      td= simple_format(h(@product.description),{},sanitize: false,wrapper_tag: 'div')
+        - if current_user.already_liked?(@product)
+          = button_to 'いいねを取り消す',product_like_path(@product),method: :delete
+        - else
+          = button_to 'いいね',product_likes_path(@product)
+    tr
+      th いいねしたユーザー
+      td
+        -@product.iine_users.each do |user|
+          =user.nickname
+.content
+  = render 'likes/like', product: @product
+  = link_to '編集',edit_product_path,class:'btn btn-info mr-3'
+  = link_to '削除',product_path,method: :delete,data: {confirm: "「#{@product.name}」を削除しますか？？"},class: 'btn btn-danger mr-3'

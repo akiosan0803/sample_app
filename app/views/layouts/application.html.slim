@@ -1,0 +1,42 @@
+doctype html
+html lang='ja'
+  head
+    title
+      | SampleApp
+    = csrf_meta_tags
+    = csp_meta_tag
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+  body.h-100
+    header
+      nav.navbar.navbar-expand-sm.navbar-light.bg-light.sticky-top.py-5
+        .container
+          a href="#" class='app_title'
+            img src=""
+          button.navbar-toggler type='button' data-toggle='collapse' data-target='#menu'
+            span.navbar-toggler-icon
+          #menu.collapse.navbar-collapse
+            ul.nav
+              li.nav-item
+                h1
+                  a href=root_path class='nav-link active'  Sample_app
+          #menu.collapse.navbar-collapse
+            .ml-auto
+              - if user_signed_in?
+                .user_nav
+                  span.pr-5
+                    = current_user.nickname
+                  a href='/products/new' class='post pr-2'投稿
+                  = link_to'マイページ',"/users/= current_user.id",class:'pr-2'
+                  = link_to 'ログアウト', destroy_user_session_path, method: :delete,class: 'pr-2'
+              - else
+                  = link_to 'ログイン', new_user_session_path, class: 'post pr-5'
+                  = link_to '新規登録', new_user_registration_path, class: 'post'
+    .container.py-5.my-5
+      - if flash.notice.present?
+        .alert.alert-success= flash.notice
+      = yield
+    footer.py-5.text-center.bg-secondary.text-light.lead My first app

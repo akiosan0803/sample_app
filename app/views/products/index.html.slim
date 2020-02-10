@@ -1,0 +1,26 @@
+h1.mb-3 投稿一覧
+
+
+.container-fluid
+  .row.show-grid
+    - @products.each do |product|
+      .col-sm-2
+        = image_tag product.image.variant(resize: "150x150"),id: :image_prev if product.image.attached?
+      .col-sm-10
+        table.table.table-hover
+          thead.thead-default
+            tr
+              th タイトル
+              th いいね数
+              th ユーザー
+              th= Product.human_attribute_name(:created_at)
+              th
+          tbody
+              tr
+                td= link_to product.name, product
+                td= product.likes_count
+                td= product.user.nickname
+                td= product.created_at.strftime('%y-%m-%d %h:%m')
+                td
+                  = link_to '編集',edit_product_path(product),class: 'btn btn-info mr-3'
+                  = link_to '削除',product,method: :delete,data: {confirm: "「#{product.name}」を削除しますか？？"},class: 'btn btn-danger mr-3'
