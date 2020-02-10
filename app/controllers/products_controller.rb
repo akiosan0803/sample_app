@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @like = Like.new
+    # @like = Like.new
     @like_count = Like.where(product_id: params[:product_id]).count
   end
 

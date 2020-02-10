@@ -33,7 +33,7 @@ html lang='ja'
                   = link_to'マイページ',"/users/= current_user.id",class:'pr-2'
                   = link_to 'ログアウト', destroy_user_session_path, method: :delete,class: 'pr-2'
               - else
-                  = link_to 'ログイン', new_user_session_path, class: 'post pr-5'
+                  = link_to 'ログイン', new_user_session_path, class: 'post pr-2'
                   = link_to '新規登録', new_user_registration_path, class: 'post'
     .container.py-5.my-5
       - if flash.notice.present?

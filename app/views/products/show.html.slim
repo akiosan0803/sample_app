@@ -3,7 +3,7 @@ h1 詳細ページ
 .nav.justify-content-end
  = link_to '一覧', products_path, class: 'nav-link'
 .image-box.mb-3
-  = image_tag @product.image.variant(resize: "150x150"),id: :image_prev if @product.image.attached?
+  = image_tag @product.image.variant(resize: "150x150",),id: :image_prev if @product.image.attached?
 table.table.table-hover
   tbody
     tr
@@ -14,17 +14,22 @@ table.table.table-hover
       td= @product.created_at.strftime('%y-%m-%d %h:%m')
     tr
       th= Product.human_attribute_name(:description)
-      td= simple_format(h(@product.description),{},sanitize: false,wrapper_tag: 'div')
-        - if current_user.already_liked?(@product)
-          = button_to 'いいねを取り消す',product_like_path(@product),method: :delete
-        - else
-          = button_to 'いいね',product_likes_path(@product)
+      td= @product.description
     tr
       th いいねしたユーザー
       td
         -@product.iine_users.each do |user|
           =user.nickname
 .content
-  = render 'likes/like', product: @product
+  - if current_user != @product.user
+    - if Like.find_by(user_id: @current_user.id, product_id: @product.id)
+      = link_to product_like_path(@product.id),method: :delete do
+        span class='fa fa-heart like-btn-unlike'
+      span.like-btn-unlike
+        = @product.likes_count
+    - else
+      = link_to product_likes_path(@product.id), method: :post do
+        span class='fa fa-heart like-btn'
+      = @product.likes_count
   = link_to '編集',edit_product_path,class:'btn btn-info mr-3'
   = link_to '削除',product_path,method: :delete,data: {confirm: "「#{@product.name}」を削除しますか？？"},class: 'btn btn-danger mr-3'
