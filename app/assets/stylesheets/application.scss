@@ -1,6 +1,8 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "modules/index";
-@import "modules/new";
-@import "products"
+@import "modules/application";
+@import "modules/products";
+@import "modules/likes";
+@import "modules/users";
+
