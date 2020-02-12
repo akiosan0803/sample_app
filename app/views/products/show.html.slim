@@ -1,7 +1,7 @@
 h1 詳細ページ
 
 .nav.justify-content-end
- = link_to '一覧', products_path, class: 'nav-link'
+ = link_to '投稿一覧', products_path, class: 'nav-link'
 .image-box.mb-3
   = image_tag @product.image.variant(resize: "150x150",),id: :image_prev if @product.image.attached?
 table.table.table-hover
@@ -23,10 +23,11 @@ table.table.table-hover
 .content
   - if current_user != @product.user
     - if Like.find_by(user_id: @current_user.id, product_id: @product.id)
-      = link_to product_like_path(@product.id),method: :delete do
-        span class='fa fa-heart like-btn-unlike'
-      span.like-btn-unlike
-        = @product.likes_count
+      .like-content.btn.btn-warning.mr-3
+        = link_to product_like_path(@product.id),method: :delete do
+          span class='fa fa-heart like-btn-unlike'
+        span.like-btn-unlike
+          = @product.likes_count
     - else
       = link_to product_likes_path(@product.id), method: :post do
         span class='fa fa-heart like-btn'
