@@ -29,8 +29,9 @@ table.table.table-hover
         span.like-btn-unlike
           = @product.likes_count
     - else
-      = link_to product_likes_path(@product.id), method: :post do
-        span class='fa fa-heart like-btn'
-      = @product.likes_count
+      .like-content.btn.btn-secondary.mr-3
+        = link_to product_likes_path(@product.id), method: :post do
+          span class='fa fa-heart like-btn'
+        = @product.likes_count
   = link_to '編集',edit_product_path,class:'btn btn-info mr-3'
   = link_to '削除',product_path,method: :delete,data: {confirm: "「#{@product.name}」を削除しますか？？"},class: 'btn btn-danger mr-3'

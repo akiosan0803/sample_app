@@ -4,7 +4,7 @@ h1.mb-3 投稿一覧
 .container-fluid
   .row.show-grid
     - @products.each do |product|
-      .col-sm-2
+      .col-sm-2.image-box
         = image_tag product.image.variant(resize: "150x150"),id: :image_prev if product.image.attached?
       .col-sm-10
         table.table.table-hover
