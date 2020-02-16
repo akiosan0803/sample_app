@@ -133,6 +133,9 @@ GEM
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.12.1)
+    file_validators (2.3.0)
+      activemodel (>= 3.2)
+      mime-types (>= 1.0)
     font-awesome-sass (5.12.0)
       sassc (>= 1.11)
     globalid (0.4.2)
@@ -163,6 +166,9 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (0.9.2)
+    mime-types (3.3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2019.1009)
     mimemagic (0.3.3)
     mini_magick (4.9.5)
     mini_mime (1.0.2)
@@ -310,6 +316,7 @@ DEPENDENCIES
   devise
   devise-i18n
   devise-i18n-views
+  file_validators
   font-awesome-sass
   html2slim
   jbuilder (~> 2.5)
