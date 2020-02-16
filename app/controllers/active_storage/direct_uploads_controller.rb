@@ -2,13 +2,13 @@
 # frozen_string_literal: true
 
 # original: https://github.com/rails/rails/blob/master/activestorage/app/controllers/active_storage/direct_uploads_controller.rb
-class Active Storage::DirectUploadsController < Active Storage::BaseController
+class ActiveStorage::DirectUploadsController <  ActiveStorage::BaseController
   ActiveStorage::Blob.unattached.find_each(&:purge_later)
   before_action :authenticate_user!
   before_action :check_file_size!
 
   def create
-    blob = Active Storage::Blob.create_before_direct_upload!(blob_args)
+    blob = ActiveStorage::Blob.create_before_direct_upload!(blob_args)
     render json: direct_upload_json(blob)
   end
 
@@ -29,5 +29,4 @@ class Active Storage::DirectUploadsController < Active Storage::BaseController
         render json: { message: 'File size must be less than 1GB.' }, status: :unprocessable_entity
       end
     end
-      
 end
