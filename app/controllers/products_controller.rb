@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    product = Product.new(name: product_params[:name],description: product_params[:description],user_id: current_user.id,image: product_params[:image])
+    product = Product.new(name: product_params[:name], description: product_params[:description], user_id: current_user.id, image: product_params[:image])
     if product.save
         redirect_to products_path,notice: "「#{product.name}」登録しました"
     else
@@ -21,7 +21,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    # @like = Like.new
     @like_count = Like.where(product_id: params[:product_id]).count
   end
 

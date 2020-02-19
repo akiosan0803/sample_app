@@ -1,6 +1,6 @@
 h1 ユーザー一覧
 = @users.each do |user|
-  a href="/users/ = user.id"
-    = user.email
+  = user.nickname
+  = user.email
   hr
-= link_to 'ホームへ戻る', product_parh
+= link_to 'ホームへ戻る', root_path

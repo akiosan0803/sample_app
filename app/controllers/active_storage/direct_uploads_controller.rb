@@ -4,7 +4,7 @@
 # original: https://github.com/rails/rails/blob/master/activestorage/app/controllers/active_storage/direct_uploads_controller.rb
 class ActiveStorage::DirectUploadsController <  ActiveStorage::BaseController
   ActiveStorage::Blob.unattached.find_each(&:purge_later)
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:create]
   before_action :check_file_size!
 
   def create

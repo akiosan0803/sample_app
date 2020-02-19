@@ -3,9 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
+  validates :nickname, presence: true
   has_many :products, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_one_attached :avatar
-  validates :image, file_size: { in: 100.kilobytes..1.megabyte }, file_content_type: { allow: ['image/jpeg', 'image/png'] }
-  
+  # validates :avatar, file_size: { in: 100.kilobytes..1.megabyte }, file_content_type: { allow: ['image/jpeg', 'image/png'] }
 end
