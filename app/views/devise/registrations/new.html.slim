@@ -4,7 +4,7 @@ h1.mb-4
   = devise_error_messages!
   .form-group
     p.mb-2 ユーザー画像
-    = f.file_field :avatar, direct_upload: true
+    = f.file_field :avatar, direct_upload: true,accept: "image/png, image/jpeg, image/gif"
   .form-group
     = f.label :nickname
     = f.text_field :nickname, autofocus: true, class: 'form-control'
