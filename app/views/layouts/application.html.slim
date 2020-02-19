@@ -28,13 +28,13 @@ html lang='ja'
                       = image_tag current_user.avatar.variant(resize: "90x90"),class:'pt-2'
                   span.pr-5
                     = current_user.nickname
-                  a href='/products/new' class='post pr-2'投稿
-                  = link_to'マイページ',"/users/= current_user.id",class:'pr-2'
-                  = link_to'ユーザー編集',edit_user_registration_path,class:'pr-2'
-                  = link_to 'ログアウト', destroy_user_session_path, method: :delete,class: 'pr-2'
+                  a href='/products/new' class='post mr-2 btn btn-primary'投稿
+                  = link_to'マイページ',"/users/= current_user.id",class:'mr-2 btn btn-primary'
+                  = link_to'ユーザー編集',edit_user_registration_path,class:'mr-2 btn btn-primary'
+                  = link_to 'ログアウト', destroy_user_session_path, method: :delete,class: 'mr-2 btn btn-primary'
               - else
-                  = link_to 'ログイン', new_user_session_path, class: 'post pr-2'
-                  = link_to '新規登録', new_user_registration_path, class: 'post'
+                  = link_to 'ログイン', new_user_session_path, class: 'post mr-2 btn btn-primary'
+                  = link_to '新規登録', new_user_registration_path, class: 'post btn btn-primary'
     .container.py-5.my-5
       - if flash.notice.present?
         .alert.alert-success= flash.notice
