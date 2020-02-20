@@ -45,7 +45,7 @@ url: http://18.178.108.86/
 ![login](https://user-images.githubusercontent.com/52118093/74941788-001c2380-5437-11ea-8ecd-c4d2b413bc5f.gif)
 
 
-
+<br />
 * 記事の投稿
 ログインすると  
 【投稿】【マイページ】【ユーザー編集】【ログアウト】が選択可能になります。  
@@ -59,7 +59,7 @@ url: http://18.178.108.86/
 ![btn](https://user-images.githubusercontent.com/52118093/74941897-2e016800-5437-11ea-9fd4-6bf06d463857.gif)
 
 
-
+<br />
 * 記事の編集・削除
 記事が投稿されると、投稿者であれば、編集・削除ボタンが表示されます。  
 編集ボタンを押すと編集画面に移動します。  
@@ -70,7 +70,7 @@ url: http://18.178.108.86/
 ![edit_delet](https://user-images.githubusercontent.com/52118093/74942077-6a34c880-5437-11ea-81e4-46793e639c12.gif)
 
 
-
+<br />
 * 記事のいいね機能
 記事のタイトル部分を押す記事の詳細画面に移動します。  
 投稿者の場合、【編集】【削除】ボタンが表示されます。  
@@ -81,7 +81,7 @@ url: http://18.178.108.86/
 ![iine_btn](https://user-images.githubusercontent.com/52118093/74942683-8d5f7800-5437-11ea-894d-3b4faaf4ebbb.gif)
 
 
-
+<br />
 # ER図
 
 <img width="881" alt="スクリーンショット 2020-02-20 21 31 52" src="https://user-images.githubusercontent.com/52118093/74943507-d6173100-5437-11ea-9d43-3308db8e8a07.png">
