@@ -41,7 +41,6 @@ url: http://18.178.108.86/
    アドレス：111@111  
    PASS: 111111  
 
-<br />
 ![login](https://user-images.githubusercontent.com/52118093/74941788-001c2380-5437-11ea-8ecd-c4d2b413bc5f.gif)
 
 
@@ -55,7 +54,6 @@ url: http://18.178.108.86/
  【マイページ】ボタンを押すと自身が投稿した記事の一覧を観る事ができます。  
  【ユーザー編集】ボタンを押すとユーザー画像・nickname・パスワードの変更画面に移動します。  
 
-<br />
 ![btn](https://user-images.githubusercontent.com/52118093/74941897-2e016800-5437-11ea-9fd4-6bf06d463857.gif)
 
 
@@ -66,7 +64,6 @@ url: http://18.178.108.86/
 削除ボタンを押すと「〇〇を削除しますか？？」というアラートが表示され「OK」を押すと  
 削除され、フラッシュメッセージとともにトップページに戻ります。  
 
-<br />
 ![edit_delet](https://user-images.githubusercontent.com/52118093/74942077-6a34c880-5437-11ea-81e4-46793e639c12.gif)
 
 
