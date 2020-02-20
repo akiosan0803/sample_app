@@ -37,9 +37,9 @@ url: http://18.178.108.86/
 * トップページからログイン  
 トップページの【ログイン】からログインします。
 
-&nbsp;&nbsp;&nbsp;テストアカウント  
-&nbsp;&nbsp;&nbsp;&nbsp;アドレス：111@111  
-&nbsp;&nbsp;&nbsp;&nbsp;PASS: 111111  
+&emsp;&emsp;&nbsp;&nbsp;&nbsp;テストアカウント  
+&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;アドレス：111@111  
+&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;PASS: 111111  
 
 ![login](https://user-images.githubusercontent.com/52118093/74941788-001c2380-5437-11ea-8ecd-c4d2b413bc5f.gif)
 
