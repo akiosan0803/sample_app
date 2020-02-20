@@ -6,12 +6,14 @@
 table.table.table-hover
   thead.thead-default
     tr
+      th
       th= Product.human_attribute_name(:description)
       th= Product.human_attribute_name(:created_at)
       th
   tbody
     - @products.each do |product|
       tr
+        td= image_tag product.image.variant(resize: "150x150",),id: :image_prev if product.image.attached?
         td= simple_format(product.description)
         td= product.created_at.strftime('%y-%m-%d %h:%m')
         td

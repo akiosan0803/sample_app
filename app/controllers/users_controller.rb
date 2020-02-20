@@ -5,6 +5,6 @@ class UsersController < ApplicationController
   
   def show
     @nickname = current_user.nickname
-    @products = current_user.products.where(params[:description]).order('created_at DESC')
+    @products = current_user.products.where(params[:description])
   end
 end
