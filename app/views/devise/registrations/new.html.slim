@@ -8,6 +8,7 @@ h1.mb-4
   .form-group
     = f.label :nickname
     = f.text_field :nickname, autofocus: true, class: 'form-control'
+    small.form-text.text-muted （6文字以内）
   .form-group
     = f.label :email
     = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control'
